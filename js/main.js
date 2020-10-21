@@ -31,7 +31,7 @@ function createGallery(images) {
 }
 console.log(createGallery);
 
-function updateAttributeValue ( src, alt ) {
+function updateAttributeValue (src,alt) {
 	lightboxImage.src = src;
 	lightboxImage.alt = alt;
 }
@@ -45,7 +45,7 @@ function onImageClick(event) {
 
     lightbox.classList.add('is-open');
 
-    updateAttributeValue(event.target.dataset.sourse, event.target.dataset.alt);
+    updateAttributeValue(event.target.dataset.sourсe, event.target.dataset.alt);
     
 }
 
