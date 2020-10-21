@@ -31,7 +31,10 @@ function createGallery(images) {
 }
 console.log(createGallery);
 
-
+function updateAttributeValue ( src, alt ) {
+	lightboxImage.src = src;
+	lightboxImage.alt = alt;
+}
 
 galleryContainer.addEventListener('click', onImageClick);
 function onImageClick(event) {
@@ -41,12 +44,15 @@ function onImageClick(event) {
     }
 
     lightbox.classList.add('is-open');
-    lightboxImage.src = event.target.dataset.source;
-    lightboxImage.alt = event.target.alt;
+
+    updateAttributeValue(event.target.dataset.sourse, event.target.dataset.alt);
+    
 }
 
 closeLightbox.addEventListener('click', onCloseLightbox);
 function onCloseLightbox() {
-        lightbox.classList.remove('is-open');
-    
+    lightbox.classList.remove('is-open');
+
+    updateAttributeValue('','');
 }
+
