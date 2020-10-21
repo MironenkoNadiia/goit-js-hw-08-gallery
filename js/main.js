@@ -39,15 +39,12 @@ function updateAttributeValue (src,alt) {
 galleryContainer.addEventListener('click', onImageClick);
 function onImageClick(event) {
     event.preventDefault();
-    if (event.target.nodeName !== 'IMG') {
-        return;
-    }
-
+	
+    if (event.target.nodeName !== 'IMG') return;
+    updateAttributeValue(event.target.dataset.source, event.target.alt);
     lightbox.classList.add('is-open');
-
-    updateAttributeValue(event.target.dataset.sourсe, event.target.dataset.alt);
-    
 }
+
 
 closeLightbox.addEventListener('click', onCloseLightbox);
 function onCloseLightbox() {
